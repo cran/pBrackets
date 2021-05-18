@@ -1,16 +1,8 @@
-### R code from vignette source 'pBrackets_vignette.rnw'
-
-###################################################
-### code chunk number 1: pBrackets_vignette.rnw:13-15
-###################################################
+## ---- echo=FALSE, warning=FALSE, message=FALSE--------------------------------
 options(width=80, continuation="   ")
 library(pBrackets)
 
-
-###################################################
-### code chunk number 2: plot1
-###################################################
-
+## ---- echo=FALSE, results='asis', fig.height = 7, fig.width = 7,  fig.cap = 'Get a specific bracket with use of different arguments.'----
 par(mar=c(1,1,1,1))
 plot(0,0, type='n', xlim=c(0,20), ylim=c(0,20), axes=FALSE, xlab='', ylab='')
 abline(h=seq(0,20), v=seq(0, 7), col=rgb(0.8, 0.9, 0.95))
@@ -45,12 +37,7 @@ text(8, 4, labels=expression(paste(bold('Negative tick braces:'), ' ticks=-0.5')
 brackets(0, 0, 7, 2, lwd=2, ticks=c(-0.2, -0.4, -0.6, -0.8, 1), type=4)
 text(8, 2, labels=expression(paste(bold('Multiples ticks:'), ' ticks=c(-0.2,-0.4,-0.6,-0.8, 1), type=4')), adj=c(0,0))
 
-
-###################################################
-### code chunk number 3: plot2
-###################################################
-
-
+## ---- echo=FALSE, results='asis', fig.height = 7, fig.width = 7, fig.cap = 'Two ways to change direction of brackets.'----
 par(mar=c(1,1,1,1))
 plot(0,0, type='n', xlim=c(0,20), ylim=c(0,20), axes=F, xlab='', ylab='')
 abline(h=seq(0,20), v=seq(0, 7), col=rgb(0.8, 0.9, 0.95))
@@ -75,11 +62,7 @@ brackets(0, 0, 6, 6, h=-sqrt(2), lwd=2)
 text(8, 3, labels=expression(paste('x1=0,    y1=2,    x2=6,    y2=6,    h=',bold('-sqrt(2)'),',    ...')), adj=c(0,-0.5))
 
 
-
-
-###################################################
-### code chunk number 4: plot3
-###################################################
+## ---- echo=FALSE, results='asis', fig.height = 7, fig.width = 7, fig.cap = 'Different kinds of ticks and brackets without ticks.'----
 
 par(mar=c(1,1,1,1))
 plot(0,0, type='n', xlim=c(0,20), ylim=c(0,20), axes=F, xlab='', ylab='')
@@ -117,10 +100,7 @@ brackets(0, 1, 6, 1,  h=1, lwd=2, ticks=0)
 text(8, 1, labels=expression(paste('ticks = 0')), adj=c(0,-0.75))
 
 
-
-###################################################
-### code chunk number 5: plot4
-###################################################
+## ---- echo=FALSE, results='asis', fig.height = 7, fig.width = 7, fig.cap = 'Curvature argument with different types of brackets.'----
 
 par(mar=c(1,1,1,1))
 plot(0,0, type='n', xlim=c(0,20), ylim=c(3,20), axes=F, xlab='', ylab='')
@@ -153,6 +133,5 @@ text(8, 5, labels=expression(paste('curvature = ',bold('0.5'),',     type = 5,  
 
 brackets(0, 3, 6, 3, h=1, lwd=2, curvature = 0.1, type=5, ticks=NA)
 text(8, 3, labels=expression(paste('curvature = ',bold('0.1'),',     type = 5,    ticks=NA')), adj=c(0,-0.5))
-
 
 

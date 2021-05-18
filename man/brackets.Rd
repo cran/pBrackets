@@ -22,7 +22,7 @@ coordinates of points to which to draw.
 brackets height (with ticks), given in euclidean distance.
 For horizontal brackets it is the height in y-units,
 for vertical brackets it is the width in x-units.
-generally it is the euclidean distance: sqrt(x^2+y^2).
+Generally it is the euclidean distance: sqrt(x^2+y^2).
 }
   \item{ticks}{
 A single value or a vector of values in (0, 1),
@@ -33,7 +33,7 @@ Values 0 or 1, flip the starting or end edges of the brackets.
 }
   \item{curvature}{
 A value in [0, 1], gives the amount of space on the bracket that is used for the curve,
-it getting automatically smaller if many ticks are specified or the tick is near the edge.
+it is getting automatically smaller if many ticks are specified or the tick is near the edge.
 }
   \item{type}{
 A value in: 1 to 5 for different brackets forms, see example.

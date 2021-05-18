@@ -29,7 +29,7 @@ Values 0 or 1, flip the starting or end edges of the brackets.
 }
   \item{curvature}{
 A value in [0, 1], gives the amount of space on the bracket that is used for the curve,
-it getting automatically smaller if many ticks are specified or the tick is near the edge.
+it is getting automatically smaller if many ticks are specified or the tick is near the edge.
 }
   \item{type}{
 A value in: 1 to 5 for different brackets forms, see example.

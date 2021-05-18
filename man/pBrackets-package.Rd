@@ -13,8 +13,8 @@ parentheses or square brackets.
 \tabular{ll}{
 Package: \tab pBrackets\cr
 Type: \tab Package\cr
-Version: \tab 1.0\cr
-Date: \tab 2014-10-17\cr
+Version: \tab 1.1\cr
+Date: \tab 2021-05-17\cr
 License: \tab GPL version 2 or newer \cr
 }
 }

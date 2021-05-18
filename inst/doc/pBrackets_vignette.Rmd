@@ -1,36 +1,27 @@
+---
+title:  "Some examples and explanations for pBrackets."
+author: "Andreas Schulz"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Some examples and explanations for pBrackets.}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\usepackage[utf8]{inputenc}
+---
 
-\documentclass[a4paper]{article}
-\usepackage{graphics}
-\usepackage{Sweave}
-\setlength{\parskip}{0.7ex plus0.1ex minus0.1ex}
-\setlength{\parindent}{0em}
-\title{Some examples and explanations for pBrackets.}
-\author{Andreas Schulz}
-\date{\today}
-
-
-%===============================================================================
-<<echo=FALSE>>=
+```{r, echo=FALSE, warning=FALSE, message=FALSE}
 options(width=80, continuation="   ")
 library(pBrackets)
-@
-%===============================================================================
+```
 
 
-\begin{document}
-\SweaveOpts{engine=R}
-%\VignetteIndexEntry{Adds different kinds of brackets to a plot.}
-%\VignetteKeywords{brackets, braces}
-%\VignettePackage{pBrackets}
-
-%\begin{center}
-\maketitle
+The graphics are actually self-explanatory. For basic R graphics use `brackets` function.
+For grid based graphics (ggplot2) use the `grid.brackets` function.
 
 
 
-%===============================================================================
-<<label=plot1, fig=TRUE, height=8, width=8, echo=FALSE, include=FALSE, pdf=FALSE, png=TRUE, resolution=150>>=
+## Different kinds of brackets
 
+```{r, echo=FALSE, results='asis', fig.height = 7, fig.width = 7,  fig.cap = 'Get a specific bracket with use of different arguments.'}
 par(mar=c(1,1,1,1))
 plot(0,0, type='n', xlim=c(0,20), ylim=c(0,20), axes=FALSE, xlab='', ylab='')
 abline(h=seq(0,20), v=seq(0, 7), col=rgb(0.8, 0.9, 0.95))
@@ -64,15 +55,12 @@ text(8, 4, labels=expression(paste(bold('Negative tick braces:'), ' ticks=-0.5')
 
 brackets(0, 0, 7, 2, lwd=2, ticks=c(-0.2, -0.4, -0.6, -0.8, 1), type=4)
 text(8, 2, labels=expression(paste(bold('Multiples ticks:'), ' ticks=c(-0.2,-0.4,-0.6,-0.8, 1), type=4')), adj=c(0,0))
-@
-%===============================================================================
+```
+
+## Direction of brackets
 
 
-
-%===============================================================================
-<<label=plot2, fig=TRUE, height=8, width=8, echo=FALSE, include=FALSE, pdf=FALSE, png=TRUE, resolution=150>>=
-
-
+```{r, echo=FALSE, results='asis', fig.height = 7, fig.width = 7, fig.cap = 'Two ways to change direction of brackets.'}
 par(mar=c(1,1,1,1))
 plot(0,0, type='n', xlim=c(0,20), ylim=c(0,20), axes=F, xlab='', ylab='')
 abline(h=seq(0,20), v=seq(0, 7), col=rgb(0.8, 0.9, 0.95))
@@ -96,13 +84,13 @@ text(8, 6, labels=expression(paste('x1=0,    y1=4,     x2=6,    y2=8,    h=',bol
 brackets(0, 0, 6, 6, h=-sqrt(2), lwd=2)
 text(8, 3, labels=expression(paste('x1=0,    y1=2,    x2=6,    y2=6,    h=',bold('-sqrt(2)'),',    ...')), adj=c(0,-0.5))
 
-
-@
-%===============================================================================
+```
 
 
-%===============================================================================
-<<label=plot3, fig=TRUE, height=8, width=8, echo=FALSE, include=FALSE, pdf=FALSE, png=TRUE, resolution=150>>=
+
+## Set ticks argument
+
+```{r, echo=FALSE, results='asis', fig.height = 7, fig.width = 7, fig.cap = 'Different kinds of ticks and brackets without ticks.'}
 
 par(mar=c(1,1,1,1))
 plot(0,0, type='n', xlim=c(0,20), ylim=c(0,20), axes=F, xlab='', ylab='')
@@ -139,13 +127,12 @@ text(8, 3, labels=expression(paste('ticks = NULL,   h=0.5')), adj=c(0,-0.5))
 brackets(0, 1, 6, 1,  h=1, lwd=2, ticks=0)
 text(8, 1, labels=expression(paste('ticks = 0')), adj=c(0,-0.75))
 
-@
-%===============================================================================
+```
 
 
+## Curvature argument
 
-%===============================================================================
-<<label=plot4, fig=TRUE, height=7, width=8, echo=FALSE, include=FALSE, pdf=FALSE, png=TRUE, resolution=150>>=
+```{r, echo=FALSE, results='asis', fig.height = 7, fig.width = 7, fig.cap = 'Curvature argument with different types of brackets.'}
 
 par(mar=c(1,1,1,1))
 plot(0,0, type='n', xlim=c(0,20), ylim=c(3,20), axes=F, xlab='', ylab='')
@@ -179,130 +166,8 @@ text(8, 5, labels=expression(paste('curvature = ',bold('0.5'),',     type = 5,  
 brackets(0, 3, 6, 3, h=1, lwd=2, curvature = 0.1, type=5, ticks=NA)
 text(8, 3, labels=expression(paste('curvature = ',bold('0.1'),',     type = 5,    ticks=NA')), adj=c(0,-0.5))
 
-@
-%===============================================================================
+```
 
-
-%%%%%%%%%%%%%%%%%%%
-%                 %
-%       ##        %
-%      # #        %
-%     #  #        %
-%        #        %
-%        #        %
-%        #        %
-%     #######     %
-%                 %
-%%%%%%%%%%%%%%%%%%%
-
-%===============================================================================
-%###############################################################################
-%===============================================================================
-\section{Different kinds of brackets}
-
-\begin{figure}[tbh]
-\setkeys{Gin}{width=1\textwidth}
-\begin{center}
-\includegraphics{pBrackets_vignette-plot1.png}
-\end{center}
-\label{plot1}
-\caption{Get a specific bracket with use of different arguments.}
-\end{figure}
-\newpage
-%===============================================================================
-%###############################################################################
-%===============================================================================
-
-%%%%%%%%%%%%%%%%%%%
-%                 %
-%      #####      %
-%     #     #     %
-%           #     %
-%      #####      %
-%     #           %
-%     #           %
-%     ######      %
-%                 %
-%%%%%%%%%%%%%%%%%%%
-
-%===============================================================================
-%###############################################################################
-%===============================================================================
-\section{Direction of brackets}
-
-\begin{figure}[tbh]
-\setkeys{Gin}{width=1\textwidth}
-\begin{center}
-\includegraphics{pBrackets_vignette-plot2.png}
-\end{center}
-\label{plot2}
-\caption{Two ways to change direction of brackets.}
-\end{figure}
-\newpage
-%===============================================================================
-%###############################################################################
-%===============================================================================
-
-%%%%%%%%%%%%%%%%%%%
-%                 %
-%      #####      %
-%     #     #     %
-%           #     %
-%      #####      %
-%           #     %
-%     #     #     %
-%      #####      %
-%                 %
-%%%%%%%%%%%%%%%%%%%
-
-%===============================================================================
-%###############################################################################
-%===============================================================================
-\section{Set ticks argument}
-
-
-\begin{figure}[tbh]
-\setkeys{Gin}{width=1\textwidth}
-\begin{center}
-\includegraphics{pBrackets_vignette-plot3.png}
-\end{center}
-\label{plot3}
-\caption{Different kinds of ticks and brackets without ticks.}
-\end{figure}
-\newpage
-%%%%%%%%%%%%%%%%%%%
-%                 %
-%     #     #     %
-%     #     #     %
-%     #     #     %
-%     #######     %
-%           #     %
-%           #     %
-%           #     %
-%                 %
-%%%%%%%%%%%%%%%%%%%
-
-%===============================================================================
-%###############################################################################
-%===============================================================================
-\section{Curvature argument}
-
-
-\begin{figure}[tbh]
-\setkeys{Gin}{width=1\textwidth}
-\begin{center}
-\includegraphics{pBrackets_vignette-plot4.png}
-\end{center}
-\label{plot4}
-\caption{Curvature argument with different types of brackets.}
-\end{figure}
-
-
-%===============================================================================
-%###############################################################################
-%===============================================================================
-%\end{center}
-\end{document}
 
 
 

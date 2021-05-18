@@ -1,3 +1,5 @@
 importFrom(grid, grid.text, grid.grill, unit, is.unit, viewport, pushViewport, popViewport, convertX, convertY, convertHeight, convertWidth, current.transform, grid.lines, gpar, get.gpar) 
+ importFrom(graphics, lines, par) 
+ importFrom(stats, dist) 
  
  export( brackets , grid.brackets  ) 
